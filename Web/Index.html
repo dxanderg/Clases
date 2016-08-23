@@ -6,52 +6,101 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Invie  - Air Guitar Delux Company.</title>
         <link rel="stylesheet" href="css/invie.css">
+        <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat:400,700" rel="stylesheet">
         <link rel="author" href="humans.txt">
     </head>
     <body>
-        <header id="header"><!-- header -->
-        	<figure><!-- logotipo -->
-        		<img src="Images/invie.png" width="186" heigth="60" alt="Invie Logotipo">
-        	</figure>
-        	<nav><!-- menu -->
-        		<ul>
-        			<li>
-        				<a href="index.html">Home</a>
-        			</li>
-        			<li>
-        				<a href="#guitarras">Guitarras</a>
-        			</li>
-        			<li>
-        				<a href="precios.html">Precios</a>
-        			</li>
-        		</ul>
-        	</nav>
+        <header id="header" class= "header contenedor"><!-- header -->
+          <figure class="logotipo"><!-- logotipo -->
+            <img src="Images/invie.png" width="186" heigth="60" alt="Invie Logotipo">
+          </figure>
+          <nav class="menu"><!-- menu -->
+            <ul>
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="#guitarras">Guitarras</a>
+              </li>
+              <li>
+                <a href="precios.html">Precios</a>
+              </li>
+            </ul>
+          </nav>
         </header>
-        <section id="portada"><!-- Portada -->
-			<h1>Guitarras Inviesibles</h1><!-- titulo -->
-			<h3>Se la estrella del rock si no tiene plata para una guitarra...</h3><!-- resumen -->
-			<button>Conoce Mas</button><!-- boton -->
+        <section id="portada" class="portada "><!-- Portada -->
+            <div class="contenedor">
+              <h1 class="titulo">Guitarras Inviesibles</h1><!-- titulo -->
+              <h3 class="title-a">Se la estrella del rock si no tiene plata para una guitarra...</h3><!-- resumen -->
+              <button>Conoce Mas</button><!-- boton -->
+            </div>
         </section>
-        <section id="guitarras"><!-- Guitarras -->
-        	<h2>Nuestras Guitarras</h2><!-- titutlo -->
-        	<article><!-- guitarra 1 -->
-        		<img src="Images/invie-acustica.png" alt="Guitarra Invie Acustica" width="200" >
-        		<h3>Invie Acustica</h3>
-        		<ol>
-        			<li>Estilo Vintage</li>
-        			<li>Madera Pura</li>
-        			<li>Estuche invisible en Aluminio</li>
-        		</ol>
-        	</article>
-        	<article><!-- guitarra 2 -->
-        		<img src="Images/invie-classic.png" alt="Guitarra Invie Clasica"  width="200" >
-        		<h3>Invie Clasica</h3>
-        		<ol>
-        			<li>Estilo Vintage</li>
-        			<li>Liviana</li>
-        			<li>Inicia tu Camino Como RockStar</li>
-        		</ol>
-        	</article>
+        <section id="guitarras" class="guitarras contenedor"><!-- Guitarras -->
+          <h2>Nuestras Guitarras</h2><!-- titutlo -->
+          <article class="guitarra"><!-- guitarra 1 -->
+            <img class="derecha" src="Images/invie-acustica.png" alt="Guitarra Invie Acustica" width="350" >
+            <div class="contenedor-guitarra-a">
+              <h3 class="title-b">Invie Acustica</h3>
+              <ol>
+                <li>Estilo Vintage</li>
+                <li>Madera Pura</li>
+                <li>Estuche invisible en Aluminio</li>
+              </ol>
+            </div>
+          </article>
+          <article class="guitarra"><!-- guitarra 2 -->
+            <img class="izquierda" src="Images/invie-classic.png" alt="Guitarra Invie Clasica"  width="350" >
+            <div class="contenedor-guitarra-b">
+              <h3 class="title-b">Invie Clasica</h3>
+              <ol>
+                <li>Estilo Vintage</li>
+                <li>Liviana</li>
+                <li>Inicia tu Camino Como RockStar</li>
+              </ol>
+            </div>
+          </article>
         </section>
+        <footer class="footer">
+          <div class="contenedor">
+            <div class="contacto">
+              <img src="images/invie-white.png" alt="logotipo blanco">
+              <a href="tel:+573052245874"><strong>Telefono</strong><span>305 254 2599</span></a>
+              <a href="mailto:contacto@invie.com"><strong>E-mail</strong><span>Contacto@invie.com</span></a>
+            </div>
+            <form class="formulario">
+              <label for="nombre">Nombre</label>
+              <input type="text" required id="nombre" name="nombre" />
+              <label for="email">E-mail</label>
+              <input type="email" required id="email" name="email" />
+              <div class="sexo">
+                <label for="mujer">
+                  <input type="radio" name="sexo" id="mujer" value="mujer">Mujer
+                </label>
+                <label for="hombre">
+                  <input type="radio" name="sexo" id="hombre" value="hombre">Hombre
+                </label>
+              </div>
+              <div class="intereses">
+                <label for="">
+                  <input type="checkbox" name="intereses" id="cotizacion" value="cotizacion" >Cotizacion
+                </label>
+                <label for="">
+                  <input type="checkbox" name="intereses" id="reclamos" value="reclamos">Reclamos
+                </label>
+                <label for="">
+                  <input type="checkbox" name="intereses" id="comentarios" value="comentarios">Comentarios
+                </label>
+                <label for="">
+                  <input type="checkbox" name="intereses" id="otros" value="otros">Otros
+                </label>
+              </div>
+              <div>
+                <label for="comentarios">Comentarios</label>
+                <textarea name="comentarios" id="comentarios" cols="30" rows="10"></textarea>               
+                <input type="submit" value="Enviar">
+              </div>
+            </form>
+          </div>
+        </footer>
     </body>
 </html>
