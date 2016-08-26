@@ -6,16 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Precios  - Air Guitar Delux Company.</title>
         <link rel="stylesheet" href="css/invie.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no"/>
         <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat:400,700" rel="stylesheet">
         <link rel="author" href="humans.txt">
     </head>
-    <body>
+    <body class="precios">
         <header id="header" class= "header background"><!-- header -->
             <div class="contenedor">
                 <figure class="logotipo"><!-- logotipo -->
                 <img src="Images/invie.png" width="186" heigth="60" alt="Invie Logotipo">
               </figure>
-              <nav class="menu"><!-- menu -->
+              <span id="burguer-button" class="burguer-button icon-menu"></span>
+              <nav class="menu" id="menu"><!-- menu -->
                 <ul>
                   <li>
                     <a href="index.html">Home</a>
@@ -40,6 +42,9 @@
                         <th>Modelo</th>
                         <th>Precio</th>
                         <th>Descripcion</th>
+                        <th>Modelo</th>
+                        <th>Precio</th>
+                        <th>Descripcion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,13 +52,22 @@
                         <td>Invie Classic</td>
                         <td>$100.000</td>
                         <td>Guitarra Fina</td>
-                    </tr>
-                     <tr>
                         <td>Invie Classic</td>
                         <td>$100.000</td>
                         <td>Guitarra Fina</td>
                     </tr>
                      <tr>
+                        <td>Invie Classic</td>
+                        <td>$100.000</td>
+                        <td>Guitarra Fina</td>
+                        <td>Invie Classic</td>
+                        <td>$100.000</td>
+                        <td>Guitarra Fina</td>
+                    </tr>
+                     <tr>
+                        <td>Invie Classic</td>
+                        <td>$100.000</td>
+                        <td>Guitarra Fina</td>
                         <td>Invie Classic</td>
                         <td>$100.000</td>
                         <td>Guitarra Fina</td>
@@ -108,6 +122,51 @@
             </form>
           </div>
         </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.6.2/blazy.min.js"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+        <script>
+          var consulta = window.matchMedia('(max-width: 500px)');
+          consulta.addListener(mediaQuery);
+
+          var $burguerButton = document.getElementById('burguer-button');
+          var $menu = document.getElementById('menu');
+
+          $burguerButton.addEventListener('touchstart', toogleMenu);
+          function toogleMenu(){
+              $menu.classList.toggle('active');
+          };
+
+          function showMenu(){
+              $menu.classList.add('active');
+          };
+
+          function hideMenu(){
+              $menu.classList.remove('active');
+          };
+
+          function mediaQuery(){
+            if (consulta.matches) {
+              console.log('se cumplio la condicion');
+              $burguerButton.addEventListener('touchstart', toogleMenu);
+            }
+            else{
+              console.log('NO cumplio la condicion');
+              $burguerButton.removeEventListener('touchstart', toogleMenu);
+            }
+          }
+          mediaQuery();
+          
+          //lazy loading
+          var bLazy = new Blazy({
+            selector: 'img'
+          });
+
+          // Gestos Touch
+          var $body = document.body;
+          var hammertime = new Hammer($body);
+          hammertime.on('swipeleft', hideMenu);
+          hammertime.on('swiperight', showMenu)
+        </script>
 
     </body>
 </html>
