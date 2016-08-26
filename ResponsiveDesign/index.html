@@ -106,7 +106,8 @@
             </form>
           </div>
         </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.6.2/blazy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.6.2/blazy.min.js"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
         <script>
           var consulta = window.matchMedia('(max-width: 500px)');
           consulta.addListener(mediaQuery);
@@ -115,8 +116,16 @@
           var $menu = document.getElementById('menu');
 
           $burguerButton.addEventListener('touchstart', toogleMenu);
-            function toogleMenu(){
+          function toogleMenu(){
               $menu.classList.toggle('active');
+          };
+
+          function showMenu(){
+              $menu.classList.add('active');
+          };
+
+          function hideMenu(){
+              $menu.classList.remove('active');
           };
 
           function mediaQuery(){
@@ -135,7 +144,12 @@
           var bLazy = new Blazy({
             selector: 'img'
           });
-          
+
+          // Gestos Touch
+          var $body = document.body;
+          var hammertime = new Hammer($body);
+          hammertime.on('swipeleft', hideMenu);
+          hammertime.on('swiperight', showMenu)
         </script>
     </body>
 </html>
