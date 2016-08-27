@@ -5,9 +5,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Invie  - Air Guitar Delux Company.</title>
-        <link rel="stylesheet" href="css/invie.css">
         <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no"/>
-        <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat:400,700" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat:400,700" rel="stylesheet"> -->
         <link rel="author" href="humans.txt">
     </head>
     <body>
@@ -106,8 +105,6 @@
             </form>
           </div>
         </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.6.2/blazy.min.js"></script>        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
         <script>
           var consulta = window.matchMedia('(max-width: 500px)');
           consulta.addListener(mediaQuery);
@@ -151,5 +148,19 @@
           hammertime.on('swipeleft', hideMenu);
           hammertime.on('swiperight', showMenu)
         </script>
+        <script>
+           WebFontConfig = {
+              google : { families: [ 'Montserrat:400,700:latin', 'Allerta::latin' ] }
+           };
+
+           (function(d) {
+              var wf = d.createElement('script'), s = d.scripts[0];
+              wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+              s.parentNode.insertBefore(wf, s);
+           })(document);
+        </script>
+        <link rel="stylesheet" href="css/invie.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.6.2/blazy.min.js"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
     </body>
 </html>
