@@ -12,13 +12,25 @@
   "author": "dxanderg",
   "license": "MIT",
   "dependencies": {
+    "empty-element": "^1.0.0",
     "express": "^4.14.0",
     "materialize-css": "^0.97.7",
-    "pug": "^2.0.0-beta6"
+    "page": "^1.7.1",
+    "pug": "^2.0.0-beta6",
+    "title": "^1.0.0",
+    "yo-yo": "^1.2.2"
   },
   "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "build": "gulp",
+    "start": "node server.js|gulp watch"
   }
 }
