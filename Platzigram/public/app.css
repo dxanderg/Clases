@@ -6395,7 +6395,7 @@ body {
   color: #125688;
   font-family: Montserrat; }
 
-#main-container {
+.landing {
   margin: 30px auto; }
 
 .iphone {
@@ -6405,16 +6405,18 @@ body {
   text-transform: uppercase;
   font-size: 12px; }
 
-.login-box, .signup-box {
+.login-box,
+.signup-box {
   background-color: white;
   border: 1px solid #edeeee;
   border-radius: 3px;
   padding: 10px 0;
   text-align: center; }
 
-.signup-box .platzigram {
-  font-family: Oleo Script;
-  font-size: 42px; }
+.platzigram {
+  font-family: 'Oleo Script';
+  font-size: 42px;
+  color: #125688 !important; }
 
 .signup-form {
   width: 65%;
@@ -6426,10 +6428,19 @@ body {
 
 .signup-form .btn.btn-fb, .signup-form .btn-fb.btn-large {
   background-color: #4090db;
-  font-size: .9em; }
+  font-size: .8em; }
 
 .signup-form .btn.btn-fb:hover, .signup-form .btn-fb.btn-large:hover {
   background-color: #2d6599; }
 
 .signup-form .btn.btn-signup, .signup-form .btn-signup.btn-large {
   background-color: #125688; }
+
+.header {
+  background-color: white;
+  color: #125688;
+  box-shadow: none;
+  border-bottom: 1px solid #edeeee; }
+
+.timeline {
+  padding: 30px 0; }

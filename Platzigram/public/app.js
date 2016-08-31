@@ -2431,13 +2431,39 @@ module.exports = [
 
 },{}],17:[function(require,module,exports){
 var page = require('page');
+var empty = require('empty-element');
+var template = require('./template');
+var title = require('title');
 
 page('/', function (ctx, next) {
-	var main = document.getElementById('main-container');
-	main.innerHTML = '<a href="/signup">Signup</a>';
+    title('Platzigram');
+    var main = document.getElementById('main-container');
+
+    var pictures = [1, 2, 3, 4, 5];
+
+    empty(main).appendChild(template(pictures));
 });
 
-},{"page":11}],18:[function(require,module,exports){
+},{"./template":18,"empty-element":3,"page":11,"title":14}],18:[function(require,module,exports){
+var yo = require('yo-yo');
+var layout = require('../layout');
+var picture = require('../picture-card');
+
+module.exports = function (pictures) {
+  var el = yo`<div class="container timeline">
+  <div class="row">
+    <div class="col s12 m10 offset-m1 l6 offset-l3">
+      ${ pictures.map(function (pic) {
+    return picture;
+  }) }
+    </div>
+  </div>
+</div>`;
+
+  return layout(el);
+};
+
+},{"../layout":21,"../picture-card":22,"yo-yo":15}],19:[function(require,module,exports){
 var page = require('page');
 
 require('./homepage');
@@ -2446,11 +2472,11 @@ require('./signin');
 
 page();
 
-},{"./homepage":17,"./signin":20,"./signup":22,"page":11}],19:[function(require,module,exports){
+},{"./homepage":17,"./signin":23,"./signup":25,"page":11}],20:[function(require,module,exports){
 var yo = require('yo-yo');
 
 module.exports = function landing(box) {
-    return yo`<div class="container">
+    return yo`<div class="container landing">
         <div class="row">
             <div class="col s10 push-s1">
                 <div class="row">
@@ -2464,7 +2490,49 @@ module.exports = function landing(box) {
     </div>`;
 };
 
-},{"yo-yo":15}],20:[function(require,module,exports){
+},{"yo-yo":15}],21:[function(require,module,exports){
+var yo = require('yo-yo');
+
+module.exports = function layout(content) {
+  return yo`<div>
+    <nav class="header">
+      <div class="nav-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col s12 m6 offset-m1">
+              <a href="/" class="brand-logo platzigram">Platzigram</a>
+            </div>
+            <div class="col s2 m6 push-s10 push-m10">
+              <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+              <ul id="drop-user" class="dropdown-content">
+                <li><a href="#">Salir</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="content">
+      ${ content }
+    </div>
+  </div>`;
+};
+
+},{"yo-yo":15}],22:[function(require,module,exports){
+var yo = require('yo-yo');
+
+module.exports = yo`<div class="card">
+    <div class="card-image">
+      <img class="activator" src="office.jpg">
+    </div>
+    <div class="card-content">
+      <span class="card-title">Card Title</span>
+    </div>
+  </div>`;
+
+},{"yo-yo":15}],23:[function(require,module,exports){
 var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
@@ -2476,7 +2544,7 @@ page('/signin', function (ctx, next) {
    empty(main).appendChild(template);
 });
 
-},{"./template":21,"empty-element":3,"page":11,"title":14}],21:[function(require,module,exports){
+},{"./template":24,"empty-element":3,"page":11,"title":14}],24:[function(require,module,exports){
 var yo = require('yo-yo');
 var landing = require('../landing');
 
@@ -2488,7 +2556,7 @@ var signinForm = yo`<div class="col s12 m7">
                                     
                                     <div class="section">
                                         <a href="" class="btn btn-fb hide-on-small-only">Inicia Sesion en Facebook</a>
-                                        <a href="" class="btn btn-fb hide-on-med-and-up">Iniciar Sesion</a>
+                                        <a href="" class="btn btn-fb hide-on-med-and-up"><i class="fa fa-facebook-official"></i>Iniciar Sesion</a>
                                     </div>
                                     <div class="divider"></div>
                                     <div class="section">
@@ -2508,7 +2576,7 @@ var signinForm = yo`<div class="col s12 m7">
                     </div>`;
 module.exports = landing(signinForm);
 
-},{"../landing":19,"yo-yo":15}],22:[function(require,module,exports){
+},{"../landing":20,"yo-yo":15}],25:[function(require,module,exports){
 var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
@@ -2520,7 +2588,7 @@ page('/signup', function (ctx, next) {
    empty(main).appendChild(template);
 });
 
-},{"./template":23,"empty-element":3,"page":11,"title":14}],23:[function(require,module,exports){
+},{"./template":26,"empty-element":3,"page":11,"title":14}],26:[function(require,module,exports){
 var yo = require('yo-yo');
 var landing = require('../landing');
 
@@ -2532,7 +2600,7 @@ var signupForm = yo`<div class="col s12 m7">
                                     <h2>Registrate Para Ver Fotos de tus amiguis.</h2>
                                     <div class="section">
                                         <a href="" class="btn btn-fb hide-on-small-only">Inicia Sesion en Facebook</a>
-                                        <a href="" class="btn btn-fb hide-on-med-and-up">Iniciar Sesion</a>
+                                        <a href="" class="btn btn-fb hide-on-med-and-up"><i class="fa fa-facebook-official"></i>Iniciar Sesion</a>
                                     </div>
                                     <div class="divider"></div>
                                     <div class="section">
@@ -2553,4 +2621,4 @@ var signupForm = yo`<div class="col s12 m7">
                     </div>`;
 module.exports = landing(signupForm);
 
-},{"../landing":19,"yo-yo":15}]},{},[18]);
+},{"../landing":20,"yo-yo":15}]},{},[19]);
