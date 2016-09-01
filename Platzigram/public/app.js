@@ -2436,12 +2436,30 @@ var template = require('./template');
 var title = require('title');
 
 page('/', function (ctx, next) {
-    title('Platzigram');
-    var main = document.getElementById('main-container');
+  title('Platzigram');
+  var main = document.getElementById('main-container');
 
-    var pictures = [1, 2, 3, 4, 5];
+  var pictures = [{
+    user: {
+      username: 'dxanderg',
+      avatar: 'https://lh3.googleusercontent.com/2ZxNNt51Eaizw_tmrDT-Tp9hJ1lLBwbcRGhB4_ynb_hcAOm1xBVTFCC7pq9kKUT6fma503V9AA=w1440-h900-rw-no'
+    },
+    url: 'office.jpg',
+    likes: 10,
+    liked: false,
+    createdAt: new Date()
+  }, {
+    user: {
+      username: 'dxanderg',
+      avatar: 'https://lh3.googleusercontent.com/2ZxNNt51Eaizw_tmrDT-Tp9hJ1lLBwbcRGhB4_ynb_hcAOm1xBVTFCC7pq9kKUT6fma503V9AA=w1440-h900-rw-no'
+    },
+    url: 'office.jpg',
+    likes: 2,
+    liked: true,
+    createdAt: new Date().setDate(new Date().getDate() - 10)
+  }];
 
-    empty(main).appendChild(template(pictures));
+  empty(main).appendChild(template(pictures));
 });
 
 },{"./template":18,"empty-element":3,"page":11,"title":14}],18:[function(require,module,exports){
@@ -2451,14 +2469,14 @@ var picture = require('../picture-card');
 
 module.exports = function (pictures) {
   var el = yo`<div class="container timeline">
-  <div class="row">
-    <div class="col s12 m10 offset-m1 l6 offset-l3">
-      ${ pictures.map(function (pic) {
-    return picture;
+    <div class="row">
+      <div class="col s12 m10 offset-m1 l6 offset-l3">
+        ${ pictures.map(function (pic) {
+    return picture(pic);
   }) }
+      </div>
     </div>
-  </div>
-</div>`;
+  </div>`;
 
   return layout(el);
 };
@@ -2476,18 +2494,18 @@ page();
 var yo = require('yo-yo');
 
 module.exports = function landing(box) {
-    return yo`<div class="container landing">
+  return yo`<div class="container landing">
+    <div class="row">
+      <div class="col s10 push-s1">
         <div class="row">
-            <div class="col s10 push-s1">
-                <div class="row">
-                    <div class="col m5 hide-on-small-only">
-                        <img src="iphone.png" class="iphone" alt="telefono"/>
-                    </div>
-                    ${ box }
-                </div>
-            </div>
+          <div class="col m5 hide-on-small-only">
+            <img class="iphone" src="iphone.png" />
+          </div>
+          ${ box }
         </div>
-    </div>`;
+      </div>
+    </div>
+  </div>`;
 };
 
 },{"yo-yo":15}],21:[function(require,module,exports){
@@ -2522,26 +2540,60 @@ module.exports = function layout(content) {
 
 },{"yo-yo":15}],22:[function(require,module,exports){
 var yo = require('yo-yo');
+var translate = require('../translate');
 
-module.exports = yo`<div class="card">
-    <div class="card-image">
-      <img class="activator" src="office.jpg">
-    </div>
-    <div class="card-content">
-      <span class="card-title">Card Title</span>
-    </div>
-  </div>`;
+module.exports = function pictureCard(pic) {
+  var el;
+  function render(picture) {
+    return yo`<div class="card ${ picture.liked ? 'liked' : '' }">
+        <div class="card-image">
+          <img class="activator" src="${ picture.url }">
+        </div>
+        <div class="card-content">
+          <a href="/user/${ picture.user.username }" class="card-title">
+            <img src="${ picture.user.avatar }" class="avatar" />
+            <span class="username">${ picture.user.username }</span>
+          </a>
+          <small class="right time">${ translate.date(picture.createdAt) }</small>
+          <p>
+            <a class="left" href="#" onclick=${ like.bind(null, true) }><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+            <a class="left" href="#" onclick=${ like.bind(null, false) }><i class="fa fa-heart" aria-hidden="true"></i></a>
+            <span class="left likes">${ picture.likes } me gusta</span>
+          </p>
+        </div>
+      </div>`;
+  }
 
-},{"yo-yo":15}],23:[function(require,module,exports){
+  function like(liked) {
+    pic.liked = liked;
+    pic.likes += liked ? 1 : -1;
+    var newEl = render(pic);
+    yo.update(el, newEl);
+    return false;
+  }
+
+  // function dislike(){
+  //   pic.liked = false;
+  //   pic.likes--;
+  //   var newEl = render(pic);
+  //   yo.update(el, newEl);
+  //   return false;
+  // }
+
+  el = render(pic);
+  return el;
+};
+
+},{"../translate":27,"yo-yo":15}],23:[function(require,module,exports){
 var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
 var title = require('title');
 
 page('/signin', function (ctx, next) {
-   title('Platzigram - SignIn');
-   var main = document.getElementById('main-container');
-   empty(main).appendChild(template);
+  title('Platzigram - Signin');
+  var main = document.getElementById('main-container');
+  empty(main).appendChild(template);
 });
 
 },{"./template":24,"empty-element":3,"page":11,"title":14}],24:[function(require,module,exports){
@@ -2549,31 +2601,30 @@ var yo = require('yo-yo');
 var landing = require('../landing');
 
 var signinForm = yo`<div class="col s12 m7">
-                        <div class="row">
-                            <div class="signup-box">
-                                <h1 class="platzigram">Platzigram</h1>
-                                <form action="" class="signup-form">
-                                    
-                                    <div class="section">
-                                        <a href="" class="btn btn-fb hide-on-small-only">Inicia Sesion en Facebook</a>
-                                        <a href="" class="btn btn-fb hide-on-med-and-up"><i class="fa fa-facebook-official"></i>Iniciar Sesion</a>
-                                    </div>
-                                    <div class="divider"></div>
-                                    <div class="section">
-                                        
-                                        <input type="text" name="username" id="" placeholder="Nombre de Usuario"/>
-                                        <input type="password" name="password" id="" placeholder="Contraseña"/>
-                                        <button class="btn waves-effect waves-light btn-signup" type="submit">Inicia Sesion</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="login-box">
-                                ¿No Tienes Una Cuenta? <a href="/signup">Registrate</a>
-                            </div>
-                        </div>
-                    </div>`;
+  <div class="row">
+    <div class="signup-box">
+      <h1 class="platzigram">Platzigram</h1>
+      <form class="signup-form">
+        <div class="section">
+          <a class="btn btn-fb hide-on-small-only">Iniciar sesión con Facebook</a>
+          <a class="btn btn-fb hide-on-med-and-up"><i class="fa fa-facebook-official"></i> Iniciar sesión</a>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+          <input type="text" name="username" placeholder="Nombre de usuario" />
+          <input type="password" name="password" placeholder="Contraseña" />
+          <button class="btn waves-effect waves-light btn-signup" type="submit">Inicia sesión</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="login-box">
+      ¿No tienes una cuenta? <a href="/signup">Regístrate</a>
+    </div>
+  </div>
+</div>`;
+
 module.exports = landing(signinForm);
 
 },{"../landing":20,"yo-yo":15}],25:[function(require,module,exports){
@@ -2583,9 +2634,9 @@ var template = require('./template');
 var title = require('title');
 
 page('/signup', function (ctx, next) {
-   title('Platzigram - SignUp');
-   var main = document.getElementById('main-container');
-   empty(main).appendChild(template);
+  title('Platzigram - Signup');
+  var main = document.getElementById('main-container');
+  empty(main).appendChild(template);
 });
 
 },{"./template":26,"empty-element":3,"page":11,"title":14}],26:[function(require,module,exports){
@@ -2593,32 +2644,35 @@ var yo = require('yo-yo');
 var landing = require('../landing');
 
 var signupForm = yo`<div class="col s12 m7">
-                        <div class="row">
-                            <div class="signup-box">
-                                <h1 class="platzigram">Platzigram</h1>
-                                <form action="" class="signup-form">
-                                    <h2>Registrate Para Ver Fotos de tus amiguis.</h2>
-                                    <div class="section">
-                                        <a href="" class="btn btn-fb hide-on-small-only">Inicia Sesion en Facebook</a>
-                                        <a href="" class="btn btn-fb hide-on-med-and-up"><i class="fa fa-facebook-official"></i>Iniciar Sesion</a>
-                                    </div>
-                                    <div class="divider"></div>
-                                    <div class="section">
-                                        <input type="email" name="email" id="" placeholder="Correo Electronico"/>
-                                        <input type="text" name="name" id="" placeholder="Nombre Completo"/>
-                                        <input type="text" name="username" id="" placeholder="Nombre de Usuario"/>
-                                        <input type="password" name="password" id="" placeholder="Contraseña"/>
-                                        <button class="btn waves-effect waves-light btn-signup" type="submit">Registrate</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="login-box">
-                                ¿Tienes Una Cuenta? <a href="/signin">Entrar</a>
-                            </div>
-                        </div>
-                    </div>`;
+  <div class="row">
+    <div class="signup-box">
+      <h1 class="platzigram">Platzigram</h1>
+      <form class="signup-form">
+        <h2>Regístrate para ver fotos de tus amigos estudiando en Platzi</h2>
+        <div class="section">
+          <a class="btn btn-fb hide-on-small-only">Iniciar sesión con Facebook</a>
+          <a class="btn btn-fb hide-on-med-and-up"><i class="fa fa-facebook-official"></i> Iniciar sesión</a>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+          <input type="email" name="email" placeholder="Correo electrónico" />
+          <input type="text" name="name" placeholder="Nombre completo" />
+          <input type="text" name="username" placeholder="Nombre de usuario" />
+          <input type="password" name="password" placeholder="Contraseña" />
+          <button class="btn waves-effect waves-light btn-signup" type="submit">Regístrate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="login-box">
+      ¿Tienes una cuenta? <a href="/signin">Entrar</a>
+    </div>
+  </div>
+</div>`;
+
 module.exports = landing(signupForm);
 
-},{"../landing":20,"yo-yo":15}]},{},[19]);
+},{"../landing":20,"yo-yo":15}],27:[function(require,module,exports){
+
+},{}]},{},[19]);
