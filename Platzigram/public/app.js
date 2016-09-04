@@ -8800,14 +8800,20 @@ var el = yo`<footer class="site-footer">
     <div class="row">
       <div class="col s12 l3 center-align"><a href="#" data-activates="dropdown1" class="dropdown-button btn btn-flat">${ translate.message('language') }</a>
         <ul id="dropdown1" class="dropdown-content">
-          <li><a href="#!">${ translate.message('spanish') }</a></li>
-          <li><a href="#!">${ translate.message('english') }</a></li>
+          <li><a href="#" onclick=${ lang.bind(null, 'es') }>${ translate.message('spanish') }</a></li>
+          <li><a href="#" onclick=${ lang.bind(null, 'en-US') }>${ translate.message('english') }</a></li>
         </ul>
       </div>
       <div class="col s12 l3 push-l6 center-align">© 2016 Platzigram</div>
     </div>
   </div>
 </footer>`;
+
+function lang(locale) {
+  localStorage.locale = locale;
+  location.reload();
+  return false;
+}
 
 document.body.appendChild(el);
 
@@ -9061,7 +9067,7 @@ module.exports = landing(signupForm);
 
 },{"../landing":42,"../translate":51,"yo-yo":36}],49:[function(require,module,exports){
 module.exports = {
-	likes: '{likes, plural' + '=0 {no likes}' + '=1 {# like}' + 'other {# likes}}',
+	likes: '{likes, plural,' + '=0 {no likes}' + '=1 {# like}' + 'other {# likes}}',
 	'logout': 'Logout',
 	'english': 'English',
 	'spanish': 'Spanish',
@@ -9119,7 +9125,7 @@ var MESSAGES = {};
 MESSAGES.es = es;
 MESSAGES['en-US'] = en;
 
-var locale = 'es';
+var locale = localStorage.locale || 'es';
 
 module.exports = {
 	message: function (text, opts) {

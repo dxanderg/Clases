@@ -105,16 +105,17 @@ $avatar-size: 48px;
   color: $secondary-color;
 }
 
-.card .fa-heart{
+.card .fa-heart {
   color: #f44336;
   display: none;
 }
 
 .card.liked {
-  .fa-heart{
+  .fa-heart {
     display: block;
-    }
-    .fa-heart-o{
-      display: none;
-    }
+  }
+
+  .fa-heart-o {
+    display: none;
+  }
 }
