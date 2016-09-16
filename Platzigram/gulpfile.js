@@ -21,25 +21,25 @@ gulp.task('assets', function() {//crea carpeta public y copia el contenido de as
 })
 
 function compile(watch){
-	var bundle = watchify(browserify('./src/index.js'))
+	var bundle = browserify('./src/index.js', {debug: true});
+
+	if (watch){
+		bundle = watchify(bundle);
+		bundle.on('update', function (){
+			console.log('--> Bundling...');
+			rebundle();
+		})
+	}	
 
 	function rebundle(){
 		bundle
-			.transform(babel)//que transforme el archivos con la libreria de babel
+			.transform(babel, { presets: ['es2015'], plugins: ['syntax-async-functions', 'transform-regenerator']})//que transforme el archivos con la libreria de babel
 			.bundle()//procesa el archivo y lo genera
 			.on('error', function(err) { console.log(err); this.emit('end') }) //manejador de errores, muestra mensaje en caso de error
 			.pipe(source('index.js'))//transforme lo que devuelva bundle a algo que entienda gulp con Vinyl-source-stream
 			.pipe(rename('app.js'))//renombra el archivo terminado a app.js
 			.pipe(gulp.dest('public'));//mueve el archivo terminado a public
-	}
-
-	if (watch){
-		bundle.on('update', function (){
-			console.log('--> Bundling...');
-			rebundle();
-		})
-	}
-
+	}	
 	rebundle();
 }
 

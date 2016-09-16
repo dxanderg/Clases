@@ -42,7 +42,7 @@ app.get('/api/pictures', function (req, res){
     }
   ];
 
-  setTimeout(function () {
+  setTimeout(function () {//esperar 2 segundos antes de cargar las imagenes
   	res.send(pictures);
   }, 2000)
 })
