@@ -16,7 +16,7 @@
   "scripts": {
     "public": "md public & cd public & del *.* /F /S /Q",
     "build-js": "browserify -t [ babelify --presets [ es2015 ] ] src/index.js > public/app.js",
-    "copy-files": "copy src/index.css public && copy src/index.html public && cd public && ren index.css app.css && ren index.html app.html",
+    "copy-files": "copy src\\index.css public && copy src\\index.html public && cd public && ren index.css app.css",
     "build": "npm run public && npm run build-js && npm run copy-files",
     "serve": " serve public"
   }
