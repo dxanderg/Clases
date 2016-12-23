@@ -1,6 +1,6 @@
 body
 {
-	background-color: #ee3f54;
+	background-color: black;
 	font-family: 'Bree Serif', serif;
 }
 
@@ -30,6 +30,7 @@ button, h1, h2, h3, h4, h5, h6
 {
 	color: white;
 	font-family: 'Bree Serif', serif;
+	text-transform: uppercase;
 }
 
 #menu-container li a:hover
@@ -163,3 +164,25 @@ button, h1, h2, h3, h4, h5, h6
 	font-family: 'Bree Serif', serif;	
 }
 
+.data-sticky
+{
+	width: 100%;
+	z-index: 100;
+}
+
+#offCanvas,
+#offCanvas li a
+{
+	background-color: black;
+	color: white;
+	font-family: 'Bree Serif', Serif;
+}
+
+#offCanvas .is-drilldown-submenu-parent > a::after{
+	border-color: transparent transparent transparent white;
+}
+
+#offCanvas .js-drilldown-back > a::before
+{
+	border-color: transparent white transparent transparent;	
+}

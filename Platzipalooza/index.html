@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>Platzipalooza Co</title>
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Ravi+Prakash" rel="stylesheet">
     <link rel="stylesheet" href="icons/foundation-icons.css">
     <link rel="stylesheet" href="css/foundation-flex.css">
@@ -12,337 +12,372 @@
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
-    <!--  Social   -->
-    <section id="social-container">
-      <div class="row align-center text-center">
-        <div class="small-1 column">
-          <a href="#" target="_blank">
-            <i class="fi-social-facebook"></i>
-          </a>
+
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+            
+            <div id="offCanvas" class="off-canvas position-left" data-off-canvas>
+              <nav data-magellan>
+                <ul class="vertical menu" data-drilldown>
+                  <li><a href="#tickets-container">Tickets</a></li>
+                  <li>
+                    <a href="#lineup-container">Lineup</a>
+                    <ul class="vertical menu">
+                      <li><a data-toggle-dia="panelViernes" href="#lineup-container">Viernes</a></li>
+                      <li><a data-toggle-dia="panelSabado" href="#lineup-container">Sábado</a></li>
+                      <li><a data-toggle-dia="panelDomingo" href="#lineup-container">Domingo</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#info-container">Info</a></li>
+                  <li><a href="#suscribete-container">Suscibete</a></li>
+                </ul>
+              </nav>              
+            </div>
+            
+            <div class="off-canvas-content" data-off-canvas-content>
+            
+              <!--  Social   -->
+              <section id="social-container">
+                <div class="row align-center text-center">
+                  <div class="small-1 column">
+                    <a href="#" target="_blank">
+                      <i class="fi-social-facebook"></i>
+                    </a>
+                  </div>
+                  <div class="small-1 column">
+                    <a href="#" target="_blank">
+                      <i class="fi-social-twitter"></i>
+                    </a>
+                  </div>
+                  <div class="small-1 column">
+                    <a href="#" target="_blank">
+                      <i class="fi-social-instagram"></i>
+                    </a>
+                  </div>
+                </div>
+              </section>
+              <!--  Social   -->
+
+              <!--  Logo   -->
+              <section id="logo-container">
+                <div class="callout text-center">
+                  <h1>Platzipalooza</h1>
+                </div>
+              </section>
+              <!--  Logo   -->
+
+              <!--  Menu   -->
+              
+              <section id="scroll-sticky" data-sticky-container>
+                <div class="data-sticky" id="sticky" data-sticky data-options="marginTop:0;" data-sticky-on="small" data-top-anchor="scroll-sticky">
+                  <nav id="menu-container" data-magellan>
+                    <ul class="menu align-spaced show-for-small-only">
+                      <li><a href="#" data-toggle="offCanvas">Menu</a></li>
+                    </ul>
+                    <ul class="menu dropdown align-spaced show-for-medium" data-dropdown-menu>
+                      <li><a href="#tickets-container">Tickets</a></li>
+                      <li>
+                        <a href="#lineup-container">Lineup</a>
+                        <ul id="submenu-container" class="menu">
+                          <li><a data-toggle-dia="panelViernes" href="#lineup-container">Viernes</a></li>
+                          <li><a data-toggle-dia="panelSabado" href="#lineup-container">Sábado</a></li>
+                          <li><a data-toggle-dia="panelDomingo" href="#lineup-container">Domingo</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#info-container">Info</a></li>
+                      <li><a href="#suscribete-container">Suscibete</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </section>
+
+              <!--  Menu   -->
+
+              <!--  Tickets   -->
+              <section id="tickets-action">
+                <div class="callout large text-center">
+                  <a href="">
+                    <buttton class="large hollow button">Comprar Boletos</buttton>
+                  </a>
+                </div>
+              </section>
+              <!--  Tickets   -->
+              
+              <!--  LineUp   -->
+              <section id="lineup-container" data-magellan-target="lineup-container">
+                <h2 class="text-center">Lineup</h2>
+                <ul class="tabs text-center" data-tabs id="lineup-tabs">
+                  <li class="tabs-title  is-active">
+                    <a href="#panelViernes" aria-selected="true">Viernes</a>
+                  </li>
+                  <li class="tabs-title">
+                    <a href="#panelSabado">Sabado</a>
+                  </li>
+                  <li class="tabs-title">
+                    <a href="#panelDomingo">Domingo</a>
+                  </li>
+                </ul>
+                <div class="tabs-content" data-tabs-content="lineup-tabs">
+                  <div class="tabs-panel  is-active" id="panelViernes">
+                    <div class="row">
+                      
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://i2.mirror.co.uk/incoming/article675034.ece/ALTERNATES/s615/Axl-Rose-and-Slash-of-Guns-N-Roses-perform-live-at-Rock-In-Rio-II-on-January-15-1991.jpg" alt="Gun n' Roses">
+                            <figcaption class="orbit-caption">Guns n' Roses</figcaption>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://i2.mirror.co.uk/incoming/article675034.ece/ALTERNATES/s615/Axl-Rose-and-Slash-of-Guns-N-Roses-perform-live-at-Rock-In-Rio-II-on-January-15-1991.jpg" alt="Gun n' Roses">
+                            <figcaption class="orbit-caption">Guns n' Roses</figcaption>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://i2.mirror.co.uk/incoming/article675034.ece/ALTERNATES/s615/Axl-Rose-and-Slash-of-Guns-N-Roses-perform-live-at-Rock-In-Rio-II-on-January-15-1991.jpg" alt="Gun n' Roses">
+                            <figcaption class="orbit-caption">Guns n' Roses</figcaption>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://i2.mirror.co.uk/incoming/article675034.ece/ALTERNATES/s615/Axl-Rose-and-Slash-of-Guns-N-Roses-perform-live-at-Rock-In-Rio-II-on-January-15-1991.jpg" alt="Gun n' Roses">
+                            <figcaption class="orbit-caption">Guns n' Roses</figcaption>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://i2.mirror.co.uk/incoming/article675034.ece/ALTERNATES/s615/Axl-Rose-and-Slash-of-Guns-N-Roses-perform-live-at-Rock-In-Rio-II-on-January-15-1991.jpg" alt="Gun n' Roses">
+                            <figcaption class="orbit-caption">Guns n' Roses</figcaption>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://i2.mirror.co.uk/incoming/article675034.ece/ALTERNATES/s615/Axl-Rose-and-Slash-of-Guns-N-Roses-perform-live-at-Rock-In-Rio-II-on-January-15-1991.jpg" alt="Gun n' Roses">
+                            <figcaption class="orbit-caption">Guns n' Roses</figcaption>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="tabs-panel" id="panelSabado">
+                    <div class="row">
+                      
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://www.las2orillas.co/wp-content/uploads/2016/06/clapton.jpg" alt="Eric Clapton">
+                            <figcaption class="orbit-caption">Eric Clapton</figcaption>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://www.las2orillas.co/wp-content/uploads/2016/06/clapton.jpg" alt="Eric Clapton">
+                            <figcaption class="orbit-caption">Eric Clapton</figcaption>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://www.las2orillas.co/wp-content/uploads/2016/06/clapton.jpg" alt="Eric Clapton">
+                            <figcaption class="orbit-caption">Eric Clapton</figcaption>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://www.las2orillas.co/wp-content/uploads/2016/06/clapton.jpg" alt="Eric Clapton">
+                            <figcaption class="orbit-caption">Eric Clapton</figcaption>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://www.las2orillas.co/wp-content/uploads/2016/06/clapton.jpg" alt="Eric Clapton">
+                            <figcaption class="orbit-caption">Eric Clapton</figcaption>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://www.las2orillas.co/wp-content/uploads/2016/06/clapton.jpg" alt="Eric Clapton">
+                            <figcaption class="orbit-caption">Eric Clapton</figcaption>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      
+
+                    </div>
+                  </div>
+                  <div class="tabs-panel" id="panelDomingo">
+                    <div class="row">
+                      
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://www.sopitas.com/wp-content/uploads/2014/11/LedZeppelin1973_Gruen.jpg" alt="Led Zeppelin">
+                            <figcaption class="orbit-caption">Led Zeppelin</figcaption>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://www.sopitas.com/wp-content/uploads/2014/11/LedZeppelin1973_Gruen.jpg" alt="Led Zeppelin">
+                            <figcaption class="orbit-caption">Led Zeppelin</figcaption>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://www.sopitas.com/wp-content/uploads/2014/11/LedZeppelin1973_Gruen.jpg" alt="Led Zeppelin">
+                            <figcaption class="orbit-caption">Led Zeppelin</figcaption>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://www.sopitas.com/wp-content/uploads/2014/11/LedZeppelin1973_Gruen.jpg" alt="Led Zeppelin">
+                            <figcaption class="orbit-caption">Led Zeppelin</figcaption>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://www.sopitas.com/wp-content/uploads/2014/11/LedZeppelin1973_Gruen.jpg" alt="Led Zeppelin">
+                            <figcaption class="orbit-caption">Led Zeppelin</figcaption>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="small-12 medium-6 column">
+                        <div class="orbit-container">
+                          <div class="orbit-slide">
+                            <img class="orbit-image" src="http://www.sopitas.com/wp-content/uploads/2014/11/LedZeppelin1973_Gruen.jpg" alt="Led Zeppelin">
+                            <figcaption class="orbit-caption">Led Zeppelin</figcaption>
+                          </div>
+                        </div>
+                      </div>
+                      
+
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!--  LineUp   -->
+
+              <!--  Compra de Boletos   -->
+              
+              <section id="tickets-container" data-magellan-target="tickets-container">
+                <h3 class="text-center">Comprar Boletos</h3>
+                <div class="row" data-equalizer data-equalize-on="small">
+                  <div class="column small-10 small-offset-1 medium-6 medium-offset-3">
+                    <ul class="pricing-table no-bullet text-center">
+                      <li class="title">Platino</li>
+                      <li class="price">$120</li>
+                      <li class="description">Acceso Viernes, Sabado y Domingo</li>
+                      <li>2 Bebidas por cada dia</li>
+                      <li>Parqueadero Incluido todos los dias</li>
+                      <li>Participa de un sorteo para acceso al backstage</li>
+                      <li><a class="button" href="#">Comprar Platino</a></li>
+                    </ul>
+                  </div>
+                  <div class="column small-6 medium-4 medium-offset-2">
+                    <ul class="pricing-table no-bullet text-center">
+                      <li class="title">Gold</li>
+                      <li class="price">$90</li>
+                      <li class="description">Acceso Viernes, Sabado y Domingo</li>
+                      <li data-equalizer-watch>Podras comprar una bebidas para cada dia</li>
+                      <li>-</li>
+                      <li>-</li>
+                      <li><a class="button" href="#">Comprar Gold</a></li>
+                    </ul>
+                  </div>
+                  <div class="column small-6 medium-4">
+                    <ul class="pricing-table no-bullet text-center">
+                      <li class="title">Silver</li>
+                      <li class="price">$65</li>
+                      <li class="description">Acceso Viernes, Sabado y Domingo</li>
+                      <li data-equalizer-watch>-</li>
+                      <li>-</li>
+                      <li>-</li>
+                      <li><a class="button" href="#">Comprar Silver</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+              </section>
+              <!--  Compra de Boletos   -->
+
+              <!-- Suscribete -->
+
+                <section id="suscribete-container" data-magellan-target="suscribete-container">
+                  <h3 class="text-center">Suscribete</h3>
+                  <h4 class="text-center"><small>Suscribete para recibir las ultimas novedades</small></h4>
+                  <form action="https://formspree.io/your@email.com" method="POST" novalidate data-abide>
+                    <div data-abide-error class="row columns small-12 medium-6 text-center error-container" style="display: none;">
+                      <p><i class="fi-alert"></i> Ingreso un correo no valido.</p>
+                    </div>
+                    <div class="row columns small-12 medium-6">
+                      <div class="input-group">
+                        <span class="input-group-label"><i class="fi-mail"></i></span>
+                        <input type="email" name="email" class="input-group-field" placeholder="Tu @Correo.com" required>
+                        <div class="input-group-button">
+                          <input type="submit" class="button" value="Suscribirse">
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </section>
+
+              <!-- Suscribete -->
+
+              <!--  Info   -->
+              <section id="info-container" data-magellan-target="suscribete-container">
+                <h3 class="text-center">Informacion</h3>
+                <div class="info-map" data-interchange="[assets/map.small.html, small], [assets/map.html, medium]"></div>
+              </section>
+              <!--  Info   -->
+
+            </div>
         </div>
-        <div class="small-1 column">
-          <a href="#" target="_blank">
-            <i class="fi-social-twitter"></i>
-          </a>
-        </div>
-        <div class="small-1 column">
-          <a href="#" target="_blank">
-            <i class="fi-social-instagram"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-    <!--  Social   -->
-
-    <!--  Logo   -->
-    <section id="logo-container">
-      <div class="callout text-center">
-        <h1>Platzipalooza</h1>
-      </div>
-    </section>
-    <!--  Logo   -->
-
-    <!--  Menu   -->
-    
-    <section id="menu-container">
-      <ul class="menu dropdown align-spaced" data-dropdown-menu>
-        <li><a href="#">Tickets</a></li>
-        <li>
-          <a href="#">Lineup</a>
-          <ul id="submenu-container" class="menu">
-            <li><a href="#">Viernes</a></li>
-            <li><a href="#">Sábado</a></li>
-            <li><a href="#">Domingo</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Info</a></li>
-        <li><a href="#">Suscibete</a></li>
-      </ul>
-    </section>
-
-    <!--  Menu   -->
-
-    <!--  Tickets   -->
-    <section id="tickets-action">
-      <div class="callout large text-center">
-        <a href="">
-          <buttton class="large hollow button">Comprar Boletos</buttton>
-        </a>
-      </div>
-    </section>
-    <!--  Tickets   -->
-    
-    <!--  LineUp   -->
-    <section id="lineup-container">
-      <h2 class="text-center">Lineup</h2>
-      <ul class="tabs text-center" data-tabs id="lineup-tabs">
-        <li class="tabs-title  is-active">
-          <a href="#panelViernes" aria-selected="true">Viernes</a>
-        </li>
-        <li class="tabs-title">
-          <a href="#panelSabado">Sabado</a>
-        </li>
-        <li class="tabs-title">
-          <a href="#panelDomingo">Domingo</a>
-        </li>
-      </ul>
-      <div class="tabs-content" data-tabs-content="lineup-tabs">
-        <div class="tabs-panel  is-active" id="panelViernes">
-          <div class="row">
-            
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://i2.mirror.co.uk/incoming/article675034.ece/ALTERNATES/s615/Axl-Rose-and-Slash-of-Guns-N-Roses-perform-live-at-Rock-In-Rio-II-on-January-15-1991.jpg" alt="Gun n' Roses">
-                  <figcaption class="orbit-caption">Guns n' Roses</figcaption>
-                </div>
-              </div>
-            </div>
-            
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://i2.mirror.co.uk/incoming/article675034.ece/ALTERNATES/s615/Axl-Rose-and-Slash-of-Guns-N-Roses-perform-live-at-Rock-In-Rio-II-on-January-15-1991.jpg" alt="Gun n' Roses">
-                  <figcaption class="orbit-caption">Guns n' Roses</figcaption>
-                </div>
-              </div>
-            </div>
-            
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://i2.mirror.co.uk/incoming/article675034.ece/ALTERNATES/s615/Axl-Rose-and-Slash-of-Guns-N-Roses-perform-live-at-Rock-In-Rio-II-on-January-15-1991.jpg" alt="Gun n' Roses">
-                  <figcaption class="orbit-caption">Guns n' Roses</figcaption>
-                </div>
-              </div>
-            </div>
-            
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://i2.mirror.co.uk/incoming/article675034.ece/ALTERNATES/s615/Axl-Rose-and-Slash-of-Guns-N-Roses-perform-live-at-Rock-In-Rio-II-on-January-15-1991.jpg" alt="Gun n' Roses">
-                  <figcaption class="orbit-caption">Guns n' Roses</figcaption>
-                </div>
-              </div>
-            </div>
-            
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://i2.mirror.co.uk/incoming/article675034.ece/ALTERNATES/s615/Axl-Rose-and-Slash-of-Guns-N-Roses-perform-live-at-Rock-In-Rio-II-on-January-15-1991.jpg" alt="Gun n' Roses">
-                  <figcaption class="orbit-caption">Guns n' Roses</figcaption>
-                </div>
-              </div>
-            </div>
-            
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://i2.mirror.co.uk/incoming/article675034.ece/ALTERNATES/s615/Axl-Rose-and-Slash-of-Guns-N-Roses-perform-live-at-Rock-In-Rio-II-on-January-15-1991.jpg" alt="Gun n' Roses">
-                  <figcaption class="orbit-caption">Guns n' Roses</figcaption>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div class="tabs-panel" id="panelSabado">
-          <div class="row">
-            
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://www.las2orillas.co/wp-content/uploads/2016/06/clapton.jpg" alt="Eric Clapton">
-                  <figcaption class="orbit-caption">Eric Clapton</figcaption>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://www.las2orillas.co/wp-content/uploads/2016/06/clapton.jpg" alt="Eric Clapton">
-                  <figcaption class="orbit-caption">Eric Clapton</figcaption>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://www.las2orillas.co/wp-content/uploads/2016/06/clapton.jpg" alt="Eric Clapton">
-                  <figcaption class="orbit-caption">Eric Clapton</figcaption>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://www.las2orillas.co/wp-content/uploads/2016/06/clapton.jpg" alt="Eric Clapton">
-                  <figcaption class="orbit-caption">Eric Clapton</figcaption>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://www.las2orillas.co/wp-content/uploads/2016/06/clapton.jpg" alt="Eric Clapton">
-                  <figcaption class="orbit-caption">Eric Clapton</figcaption>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://www.las2orillas.co/wp-content/uploads/2016/06/clapton.jpg" alt="Eric Clapton">
-                  <figcaption class="orbit-caption">Eric Clapton</figcaption>
-                </div>
-              </div>
-            </div>
-            
-            
-
-          </div>
-        </div>
-        <div class="tabs-panel" id="panelDomingo">
-          <div class="row">
-            
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://www.sopitas.com/wp-content/uploads/2014/11/LedZeppelin1973_Gruen.jpg" alt="Led Zeppelin">
-                  <figcaption class="orbit-caption">Led Zeppelin</figcaption>
-                </div>
-              </div>
-            </div>
-            
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://www.sopitas.com/wp-content/uploads/2014/11/LedZeppelin1973_Gruen.jpg" alt="Led Zeppelin">
-                  <figcaption class="orbit-caption">Led Zeppelin</figcaption>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://www.sopitas.com/wp-content/uploads/2014/11/LedZeppelin1973_Gruen.jpg" alt="Led Zeppelin">
-                  <figcaption class="orbit-caption">Led Zeppelin</figcaption>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://www.sopitas.com/wp-content/uploads/2014/11/LedZeppelin1973_Gruen.jpg" alt="Led Zeppelin">
-                  <figcaption class="orbit-caption">Led Zeppelin</figcaption>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://www.sopitas.com/wp-content/uploads/2014/11/LedZeppelin1973_Gruen.jpg" alt="Led Zeppelin">
-                  <figcaption class="orbit-caption">Led Zeppelin</figcaption>
-                </div>
-              </div>
-            </div>
-
-            <div class="small-12 medium-6 column">
-              <div class="orbit-container">
-                <div class="orbit-slide">
-                  <img class="orbit-image" src="http://www.sopitas.com/wp-content/uploads/2014/11/LedZeppelin1973_Gruen.jpg" alt="Led Zeppelin">
-                  <figcaption class="orbit-caption">Led Zeppelin</figcaption>
-                </div>
-              </div>
-            </div>
-            
-
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--  LineUp   -->
-
-    <!--  Compra de Boletos   -->
-    
-    <section id="tickets-container">
-      <h3 class="text-center">Comprar Boletos</h3>
-      <div class="row" data-equalizer data-equalize-on="small">
-        <div class="column small-10 small-offset-1 medium-6 medium-offset-3">
-          <ul class="pricing-table no-bullet text-center">
-            <li class="title">Platino</li>
-            <li class="price">$120</li>
-            <li class="description">Acceso Viernes, Sabado y Domingo</li>
-            <li>2 Bebidas por cada dia</li>
-            <li>Parqueadero Incluido todos los dias</li>
-            <li>Participa de un sorteo para acceso al backstage</li>
-            <li><a class="button" href="#">Comprar Platino</a></li>
-          </ul>
-        </div>
-        <div class="column small-6 medium-4 medium-offset-2">
-          <ul class="pricing-table no-bullet text-center">
-            <li class="title">Gold</li>
-            <li class="price">$90</li>
-            <li class="description">Acceso Viernes, Sabado y Domingo</li>
-            <li data-equalizer-watch>Podras comprar una bebidas para cada dia</li>
-            <li>-</li>
-            <li>-</li>
-            <li><a class="button" href="#">Comprar Gold</a></li>
-          </ul>
-        </div>
-        <div class="column small-6 medium-4">
-          <ul class="pricing-table no-bullet text-center">
-            <li class="title">Silver</li>
-            <li class="price">$65</li>
-            <li class="description">Acceso Viernes, Sabado y Domingo</li>
-            <li data-equalizer-watch>-</li>
-            <li>-</li>
-            <li>-</li>
-            <li><a class="button" href="#">Comprar Silver</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-    <!--  Compra de Boletos   -->
-
-    <!-- Suscribete -->
-
-      <section id="suscribete-container">
-        <h3 class="text-center">Suscribete</h3>
-        <h4 class="text-center"><small>Suscribete para recibir las ultimas novedades</small></h4>
-        <form action="" method="" novalidate data-abide>
-          <div data-abide-error class="row columns small-12 medium-6 text-center error-container" style="display: none;">
-            <p><i class="fi-alert"></i> Ingreso un correo no valido.</p>
-          </div>
-          <div class="row columns small-12 medium-6">
-            <div class="input-group">
-              <span class="input-group-label"><i class="fi-mail"></i></span>
-              <input type="email" name="email" class="input-group-field" placeholder="Tu @Correo.com" required>
-              <div class="input-group-button">
-                <input type="submit" class="button" value="Suscribirse">
-              </div>
-            </div>
-          </div>
-        </form>
-      </section>
-
-    <!-- Suscribete -->
-
-    <!--  Info   -->
-    <section id="info-container">
-      <h3 class="text-center">Informacion</h3>
-      <div class="info-map" data-interchange="[assets/map.small.html, small], [assets/map.html, medium]"></div>
-    </section>
-    <!--  Info   -->
+    </div>
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
