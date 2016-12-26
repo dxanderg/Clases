@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap-flex.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header-container">
+    	<div class="container">
+    		<div class="row flex-items-xs-middle flex-items-xs-between">
+    			<div class="col-xs-3">
+    				<h1>PlatziShop</h1>
+    			</div>
+    			<div class="col-xs-3 text-xs-right">
+    				<button class="navbar-toggler hidden-sm-up"  data-toggle="collapse" data-target="#navMenu">
+    					&#9776;
+    				</button>
+    				<a class="login hidden-xs-down text-uppercase font-weigt-bold" href="#">Login</a>
+    			</div>
+    		</div>
+    	</div>
+    </header>
+    <!-- Header -->
+
+    <!-- Menu -->
+		<div id="menu-container">
+			<nav id="navMenu" class="navbar-toggleable-xs navbar navbar-light collapse">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-10 offset-xs-1 col-md-4 offset-md-0">
+							<ul class="nav navbar-nav">
+								<li class="nav-item active text-xs-center">
+									<a href="#" class="nav-link">Home</a>
+								</li>
+								<li class="nav-item text-xs-center">
+									<a href="#" class="nav-link">Catalogo</a>
+								</li>
+								<li class="nav-item text-xs-center">
+									<a href="#" class="nav-link">Carrito</a>
+								</li>
+								<li class="nav-item hidden-sm-up text-xs-center">
+									<a href="#" class="nav-link">Login</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-xs-12 col-md-6 offset-md-2 hidden-xs-down">
+							<form action="">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="¿Encontro lo que buscaba?">
+									<span class="input-group-btn">
+										<button class="btn btn-platzi" type="button">
+											<span class="hidden-sm-down">Buscar</span>
+											<i class="fa fa-search hidden-md-up"></i>
+										</button>
+									</span>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div id="search-bar" class="container hidden-sm-up">
+				<div class="row">
+					<div class="col-xs">
+						<form action="">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="¿Encontro lo que buscaba?">
+									<span class="input-group-btn">
+										<button class="btn btn-platzi" type="button">
+											<span class="hidden-sm-down">Buscar</span>
+											<i class="fa fa-search hidden-md-up"></i>
+										</button>
+									</span>
+								</div>
+							</form>
+					</div>
+				</div>
+			</div>	
+		</div>
+    <!-- Menu -->
+
+    <!-- Carousel -->
+    <div id="carousel-container">
+			<div id="productosCarousel" class="carousel slide" data-ride="carousel">
+			  <ol class="carousel-indicators">
+			    <li data-target="#productosCarousel" data-slide-to="0" class="active"></li>
+			    <li data-target="#productosCarousel" data-slide-to="1"></li>
+			    <li data-target="#productosCarousel" data-slide-to="2"></li>
+			  </ol>
+			  <div class="carousel-inner" role="listbox">
+			    <div class="carousel-item active">
+			      <img src="images/producto.svg" alt="Primer Producto">
+						  <div class="carousel-caption">
+						    <h4>Producto 1</h4>
+						    <p class="hidden-sm-down">Many desktop publishing packages and web page</p>
+						  </div>
+			    </div>
+			    <div class="carousel-item">
+			      <img src="images/producto.svg" alt="Segundo Producto">
+						  <div class="carousel-caption">
+						    <h4>Producto 2</h4>
+						    <p class="hidden-sm-down">Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+						  </div>
+			    </div>
+			    <div class="carousel-item">
+			      <img src="images/producto.svg" alt="Tercer Producto">
+						  <div class="carousel-caption">
+						    <h4>Producto 3</h4>
+						    <p class="hidden-sm-down">Aldus PageMaker including versions of Lorem Ipsum.</p>
+						  </div>
+			    </div>
+			  </div>
+			  <a class="left carousel-control" href="#productosCarousel" role="button" data-slide="prev">
+			    <span class="icon-prev" aria-hidden="true"></span>
+			    <span class="sr-only">Producto Anterior</span>
+			  </a>
+			  <a class="right carousel-control" href="#productosCarousel" role="button" data-slide="next">
+			    <span class="icon-next" aria-hidden="true"></span>
+			    <span class="sr-only">Producto Siguiente</span>
+			  </a>
+			</div>
+		</div>
+    <!-- Carousel -->
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+  </body>
+</html>
