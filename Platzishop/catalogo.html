@@ -38,10 +38,10 @@
 					<div class="row">
 						<div class="col-xs-10 offset-xs-1 col-md-4 offset-md-0">
 							<ul class="nav navbar-nav">
-								<li class="nav-item active text-xs-center">
+								<li class="nav-item text-xs-center">
 									<a href="index.html" class="nav-link">Home</a>
 								</li>
-								<li class="nav-item text-xs-center">
+								<li class="nav-item active text-xs-center">
 									<a href="catalogo.html" class="nav-link">Catalogo</a>
 								</li>
 								<li class="nav-item text-xs-center">
@@ -88,83 +88,103 @@
 		</div>
     <!-- Menu -->
 
-    <!-- Carousel -->
-    <div id="carousel-container">
-			<div id="productosCarousel" class="carousel slide" data-ride="carousel">
-			  <ol class="carousel-indicators">
-			    <li data-target="#productosCarousel" data-slide-to="0" class="active"></li>
-			    <li data-target="#productosCarousel" data-slide-to="1"></li>
-			    <li data-target="#productosCarousel" data-slide-to="2"></li>
-			  </ol>
-			  <div class="carousel-inner" role="listbox">
-			    <div class="carousel-item active">
-			      <img src="images/producto.svg" alt="Primer Producto">
-						  <div class="carousel-caption">
-						    <h4>Producto 1</h4>
-						    <p class="hidden-sm-down">Many desktop publishing packages and web page</p>
-						  </div>
-			    </div>
-			    <div class="carousel-item">
-			      <img src="images/producto.svg" alt="Segundo Producto">
-						  <div class="carousel-caption">
-						    <h4>Producto 2</h4>
-						    <p class="hidden-sm-down">Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
-						  </div>
-			    </div>
-			    <div class="carousel-item">
-			      <img src="images/producto.svg" alt="Tercer Producto">
-						  <div class="carousel-caption">
-						    <h4>Producto 3</h4>
-						    <p class="hidden-sm-down">Aldus PageMaker including versions of Lorem Ipsum.</p>
-						  </div>
-			    </div>
-			  </div>
-			  <a class="left carousel-control" href="#productosCarousel" role="button" data-slide="prev">
-			    <span class="icon-prev" aria-hidden="true"></span>
-			    <span class="sr-only">Producto Anterior</span>
-			  </a>
-			  <a class="right carousel-control" href="#productosCarousel" role="button" data-slide="next">
-			    <span class="icon-next" aria-hidden="true"></span>
-			    <span class="sr-only">Producto Siguiente</span>
-			  </a>
+    <!-- Breadcrumbs -->
+		<section id="breadcrumbs-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs">
+						<nav class="breadcrumb">
+							<!-- <a href="index.html" class="breadcrumb-item">PlatziShop</a> -->
+							<a href="catalogo.html" class="breadcrumb-item">Catalogo</a>
+							<span class="breadcrumb-item active">Todos los Productos</span>
+						</nav>
+					</div>
+				</div>
 			</div>
-		</div>
-    <!-- Carousel -->
+		</section>
+    <!-- Breadcrumbs -->
 
-		<!-- Info -->
-    <div id="info-container">
-    	<div class="container">
-    		<div class="row text-xs-center flex-items-xs-middle flex-items-xs-between">
-    			<div class="col-xs-6 offset-xs-3 col-md-2 offset-md-0">
-    				<img src="images/calidad.png" alt="Calidad" class="img-fluid">
-    				<h4>Calidad</h4>
-    			</div>
-    			<div class="col-xs-6 offset-xs-3 col-md-2 offset-md-0">
-    			<img src="images/envio.png" alt="EnvioGratis" class="img-fluid">
-    				<h4>Envio Gratis</h4>
-    			</div>
-    			<div class="col-xs-6 offset-xs-3 col-md-2 offset-md-0">
-    			<img src="images/soporte.png" alt="Soporte" class="img-fluid">
-    				<h4>Soporte 24 Horas</h4>
-    			</div>
-    		</div>
-    		<!-- <div class="row text-xs-center flex-items-xs-middle">
-					<div class="col-xs-12 col-md-4">
-						<h4>Calidad</h4>
+    <!-- Productos -->
+		<section id="productos-container">
+			<div class="container">
+				<div class="row">
+					<!-- Filtros -->
+					<div class="col-xs-12 col-md-3">
+						<div class="list-group filtros-toggle">
+							<a href="#" id="filtrosToggle" class="list-group-item list-group-item-action navbar-toggler hidden-sm-up" data-target="#filtros-container" data-toggle="collapse">Filtros</a>
+						</div>
+						<div id="filtros-container" class="collapse navbar-toggleable-xs">
+							<div class="list-group">
+								<a href="#" class="list-group-item list-group-item-action active">
+									<h5 class="list-group-item-heading">Categoria</h5>
+								</a>
+								<a href="#" class="list-group-item list-group-item-action">
+									Ropa <span class="tag tag-pill tag-default pull-xs-right">174</span>
+								</a>
+								<a href="#" class="list-group-item list-group-item-action">
+									Tecnologia <span class="tag tag-pill tag-default pull-xs-right">34</span>
+								</a>
+								<a href="#" class="list-group-item list-group-item-action">
+									Accesorios <span class="tag tag-pill tag-default pull-xs-right">145</span>
+								</a>
+							</div>
+							<div class="list-group">
+								<a href="#" class="list-group-item list-group-item-action active">
+									<h5 class="list-group-item-heading">Color</h5>
+								</a>
+								<a href="#" class="list-group-item list-group-item-action list-group-item-info">
+									Azul <span class="tag tag-pill tag-default pull-xs-right">45</span>
+								</a>
+								<a href="#" class="list-group-item list-group-item-action list-group-item-danger">
+									Rojo <span class="tag tag-pill tag-default pull-xs-right">87</span>
+								</a>
+								<a href="#" class="list-group-item list-group-item-action list-group-item-success">
+									Verde <span class="tag tag-pill tag-default pull-xs-right">15</span>
+								</a>
+								<a href="#" class="list-group-item list-group-item-action list-group-item-warning">
+									Amarillo <span class="tag tag-pill tag-default pull-xs-right">15</span>
+								</a>
+
+							</div>
+							<div class="list-group">
+								<a href="#" class="list-group-item list-group-item-action active">
+									<h5 class="list-group-item-heading">Sexo</h5>
+								</a>
+								<a href="#" class="list-group-item list-group-item-action">
+									<div class="form-check">
+											<label class="form-check-label">
+												<input type="checkbox" value="m" class="form-check-input">
+													Masculino
+											</label>
+									</div>
+								</a>
+								<a href="#" class="list-group-item list-group-item-action">
+									<div class="form-check">
+											<label class="form-check-label">
+												<input type="checkbox" value="m" class="form-check-input">
+													Femenino
+											</label>
+									</div>
+								</a>
+							</div>
+						</div>
 					</div>
-					<div class="col-xs-12 col-md-4">
-						<h4>Envio Gratis</h4>
+					<!-- Filtros -->
+					<div class="col-xs-12 col-md-9">
+						Products
 					</div>
-					<div class="col-xs-12 col-md-4">
-						<h4>Calidad</h4>
-					</div>
-    		</div> -->
-    	</div>
-    </div>
-    <!-- Info -->
+					<!-- Productos -->
+
+					<!-- Productos -->
+
+
+
+				</div>
+			</div>
+		</section>
+    <!-- Productos -->
 
     <!-- Footer -->
-		
 		<div id="footer-container">
 			<div class="container">
 				<div class="row text-xs-center text-md-left">
@@ -204,13 +224,41 @@
 				</div>
 			</div>
 		</div>
-
     <!-- Footer -->
+
+    <!-- Modal -->
+		
+		<div class="modal fade" id="modalOferta">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" type="button" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Oferta Exclusiva</h4>
+					</div>
+					<div class="modal-body">
+						Registrate Hoy y recive $15 de descuento!
+						<form action="#" class="form">
+							<div class="form-group">
+								<input type="email" class="form-control" id="email" name="email" placeholder="tu@correo.com">
+								<small class="form-text text-muted">No compartiremos tu informacion con terceros</small>
+							</div>
+							<button type="submit" class="btn btn-platzi form-text">Registrame</button>
+							<button id="btnNoRegistrar" class="btn btn-warning form-text" data-dismiss="modal">No, no quiero el descuento</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <!-- Modal -->
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
+    <script>
+    	mostrarModal()
+    </script>
   </body>
 </html>

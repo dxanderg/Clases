@@ -1,6 +1,6 @@
 body
 {
-	/*font-family: 'Montserrat', sans-serif;*/
+	font-family: 'Montserrat', sans-serif;
 }
 
 #header-container,
@@ -78,4 +78,37 @@ input.form-control:focus
 	#footer-container [class*="col-"] {
 		margin-bottom: 2em;
 	}
+}
+
+#breadcrumbs-container .breadcrumb
+{
+	background-color: white;
+	padding-left: 0;
+}
+
+#breadcrumbs-container .breadcrumb .breadcrumb-item
+{
+	color: #1c3643;
+}
+
+#breadcrumbs-container .breadcrumb .breadcrumb-item.active
+{
+	color: #95a5a6;
+}
+
+#breadcrumbs-container .breadcrumb .breadcrumb-item+.breadcrumb-item::before
+{
+	content: ">";
+	font-weight: bold;
+}
+
+#filtros-container .list-group-item-action.active
+{
+	background-color: #99c84a;
+	border-color: #99c84a;
+}
+
+#filtros-container .list-group
+{
+	padding-bottom: 1em;
 }
